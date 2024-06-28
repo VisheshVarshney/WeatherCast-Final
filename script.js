@@ -10,6 +10,9 @@ let longitude = document.querySelector("#longitude");
 let latitude = document.querySelector("#latitude");
 let precipitation = document.querySelector("#precipitation");
 
+// Pexels API key
+const pexelsKey = 'OleehP0tDvHZ41Somnr5PZ8ZG87U65GMf1K46YEPzGRqzy4kYMrzvvdP';
+
 // Function to get the user's current city based on browser location
 function getCurrentCity() {
     if (navigator.geolocation) {
@@ -69,6 +72,24 @@ function updateAccuweatherLink(city) {
     accuweatherLink.href = `https://www.accuweather.com/en/search-locations?query=${city}`;
 }
 
+// Function to set background image from Pexels
+function setBackgroundImage(query) {
+    fetch(`https://api.pexels.com/v1/search?query=${query}&per_page=1`, {
+        headers: {
+            Authorization: pexelsKey
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.photos.length > 0) {
+            let photo = data.photos[0];
+            document.getElementById('container').style.backgroundImage = `url('${photo.src.landscape}')`;
+        } else {
+            console.error("No photos found for query:", query);
+        }
+    })
+    .catch(error => console.error("Error fetching image from Pexels:", error));
+}
 
 // Function to get weather data for a specific city
 function getWeatherData(city) {
@@ -85,31 +106,31 @@ function getWeatherData(city) {
             if (item.id < 250) {
                 tempIcon.src = "tempicons/storm.svg";
                 spotifyLink.href = "https://open.spotify.com/playlist/72swiviJbjAJaEdYH1IYlG";
-                document.getElementById('container').style.backgroundImage = `url('https://source.unsplash.com/1600x900/?storm')`;
+                setBackgroundImage('storm');
             } else if (item.id < 350) {
                 tempIcon.src = "tempicons/drizzle.svg";
                 spotifyLink.href = "https://open.spotify.com/playlist/2bK9s55eVu07elM2joTaIX";
-                document.getElementById('container').style.backgroundImage = `url('https://source.unsplash.com/1600x900/?drizzle')`;
+                setBackgroundImage('drizzle');
             } else if (item.id < 550) {
                 tempIcon.src = "tempicons/snow.svg";
                 spotifyLink.href = "https://open.spotify.com/playlist/4raqLXnmb8WYkjfed9olAR";
-                document.getElementById('container').style.backgroundImage = `url('https://source.unsplash.com/1600x900/?snow')`;
+                setBackgroundImage('snow');
             } else if (item.id < 650) {
                 spotifyLink.href = "https://open.spotify.com/playlist/2E3TIwiddapEzKl2aN6zV8";
                 tempIcon.src = "tempicons/rain.svg";
-                document.getElementById('container').style.backgroundImage = `url('https://source.unsplash.com/1600x900/?rain')`;
+                setBackgroundImage('rain');
             } else if (item.id < 800) {
                 tempIcon.src = "tempicons/atmosphere.svg";
                 spotifyLink.href = "https://open.spotify.com/playlist/12y8lWbze3EbYlS1xtAg6N";
-                document.getElementById('container').style.backgroundImage = `url('https://source.unsplash.com/1600x900/?haze')`;
+                setBackgroundImage('haze');
             } else if (item.id === 800) {
                 tempIcon.src = "tempicons/sun.svg";
                 spotifyLink.href = "https://open.spotify.com/playlist/37i9dQZF1DX1BzILRveYHb";
-                document.getElementById('container').style.backgroundImage = `url('https://source.unsplash.com/1600x900/?sunny')`;
+                setBackgroundImage('sunny');
             } else if (item.id > 800) {
                 tempIcon.src = "tempicons/clouds.svg";
                 spotifyLink.href = "https://open.spotify.com/playlist/12y8lWbze3EbYlS1xtAg6N";
-                document.getElementById('container').style.backgroundImage = `url('https://source.unsplash.com/1600x900/?cloud')`;
+                setBackgroundImage('cloud');
             }
         });
         updateAccuweatherLink(city);
@@ -142,5 +163,3 @@ checkButton.addEventListener("click", () => {
     getWeatherData(city);
     cityInput.value = "";
 });
-
-

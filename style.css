@@ -1,4 +1,3 @@
-/* Add this CSS to the end of your style.css file */
 * {
     padding: 0;
     margin: 0;
@@ -6,19 +5,21 @@
     box-sizing: border-box;
     color: #fff;
     background-color: transparent;
-    
 }
 
 #container {
     height: 100vh;
     width: 100%;
     position: relative;
-    background-image: url('https://source.unsplash.com/1600x900/?landscape');
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background-size: cover; /* Ensures the image covers the container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
 }
+
 
 #container #location {
     height: 10px;
@@ -73,7 +74,6 @@
     position: absolute;
     top: 35%;
     left: 60%;
-    
 }
 
 #weatherCountry {
@@ -118,37 +118,33 @@
     margin-right: 5rem;
 }
 
-.features
-{
+.features {
     justify-content: center;
 }
 
-.flex
-{
-  background: #000000d0;
-  color: white;
-  padding: 2em;
-  border-radius: 30px;
-  width: 100%;
-  max-width: 700px;
-  height: 30rem;
-  margin: 1em;
-  margin-top: 14rem;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
+.flex {
+    background: #000000d0;
+    color: white;
+    padding: 2em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 700px;
+    height: 30rem;
+    margin: 1em;
+    margin-top: 14rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
 }
 
-.h1
-{
+.h1 {
     position: absolute;
     top: 3%;
     left: auto;
     right: auto;
     font-size: 50px;
     font-family: "myFirstFont"; 
-
 }
 
 #spotifyLink {
@@ -169,8 +165,7 @@
     text-align: center;
 }
 
-
-#mylink{
+#mylink {
     cursor: pointer;
     min-width: auto;
     width: fit-content;
@@ -185,7 +180,7 @@
     text-align: center;
 }
 
-#loginButton{
+#loginButton {
     position: absolute;
     right: 30px;
     top: 20px;
@@ -201,10 +196,9 @@
     outline: none;
     border-radius: 20px;
     text-align: center;
-
 }
 
-#accuweather{
+#accuweather {
     position: absolute;
     right: 30px;
     bottom: 10px;
@@ -221,6 +215,7 @@
     border-radius: 20px;
     text-align: center;
 }
+
 @font-face {
     font-family: "myFirstFont"; 
     src: url("fonts/ticking-timebomb-bb.regular.ttf"); 
