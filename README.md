@@ -39,7 +39,7 @@ This version of the application introduces support for a SQL database using XAMP
 
 - Weather data provided by OpenWeatherMap API.
 - Icons sourced from [Flaticon](https://www.flaticon.com/).
-- Background images sourced from [Unsplash](https://unsplash.com/).
+- Background images sourced from [Pexels](https://pexels.com/).
 
 ## License
 
