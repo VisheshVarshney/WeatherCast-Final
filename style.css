@@ -1,0 +1,236 @@
+/* Add this CSS to the end of your style.css file */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: transparent;
+    
+}
+
+#container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-image: url('https://source.unsplash.com/1600x900/?landscape');
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#container #location {
+    height: 10px;
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    top: 11%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#container input {
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    height: 50px;
+    width: 300px;
+    margin: 0px 20px;
+    padding: 0 20px;
+    left: 0%;
+    border: none;
+    outline: none;
+    background: white;
+    font-size: 20px;
+    color: black;
+}
+
+#container input::placeholder {
+    color: #000000d0;
+}
+
+.check:hover {
+    background-color: gray;
+}
+
+#container input[type="submit"] {
+    cursor: pointer;
+    width: 150px;
+    background: #000000d0;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+#tempIcon {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 35%;
+    left: 60%;
+    
+}
+
+#weatherCountry {
+    font-size: 40px;
+    position: absolute;
+    top: 37%;
+    margin-left: auto;
+    margin-right: 20%;
+}
+
+#temperature {
+    font-size: 45px;
+    position: absolute;
+    top: 45%;
+    left: 37%;
+}
+
+#temperature b {
+    color: red;
+}
+
+#weatherDescription {
+    font-size: 20px;
+    text-transform: capitalize;
+    position: absolute;
+    bottom: 38%;
+    left: 60%;
+}
+
+#container ul {
+    position: absolute;
+    bottom: 17%;
+    left: auto;
+    right: auto;
+    margin-right: 20%;
+}
+
+#container ul li {
+    font-size: 20px;
+    margin: 20px 0;
+    list-style-type: none;
+    margin-right: 5rem;
+}
+
+.features
+{
+    justify-content: center;
+}
+
+.flex
+{
+  background: #000000d0;
+  color: white;
+  padding: 2em;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 700px;
+  height: 30rem;
+  margin: 1em;
+  margin-top: 14rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.h1
+{
+    position: absolute;
+    top: 3%;
+    left: auto;
+    right: auto;
+    font-size: 50px;
+    font-family: "myFirstFont"; 
+
+}
+
+#spotifyLink {
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+    cursor: pointer;
+    min-width: auto;
+    width: fit-content;
+    padding: 10px;
+    background: #000000d0;
+    color: white;
+    font-weight: 700;
+    font-size: 22px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+#mylink{
+    cursor: pointer;
+    min-width: auto;
+    width: fit-content;
+    padding: 10px;
+    background: #000000d0;
+    color: white;
+    font-weight: 700;
+    font-size: 22px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#loginButton{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    cursor: pointer;
+    min-width: auto;
+    width: fit-content;
+    padding: 10px;
+    background: #000000d0;
+    color: white;
+    font-weight: 700;
+    font-size: 22px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    text-align: center;
+
+}
+
+#accuweather{
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+    cursor: pointer;
+    min-width: auto;
+    width: fit-content;
+    padding: 10px;
+    background: #000000d0;
+    color: white;
+    font-weight: 700;
+    font-size: 22px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    text-align: center;
+}
+@font-face {
+    font-family: "myFirstFont"; 
+    src: url("fonts/ticking-timebomb-bb.regular.ttf"); 
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in.active {
+    opacity: 1;
+}

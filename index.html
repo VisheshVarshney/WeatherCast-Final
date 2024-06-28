@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <a id="loginButton" href="login1.php" style="position: absolute; top: 10px; right: 10px;">Login</a>
+        <div class="h1">WEATHERCAST</div>
+        <div id="location">
+            <input type="text" id="city" placeholder="City">
+            <input type="submit" id="check" value="Go">
+        </div>
+        <img src="tempicons/clouds.svg" alt="" id="tempIcon">
+        <div class="flex">
+        <h2 id="weatherCountry">Cityname</h2>
+        <h2 id="temperature">0°<strong>C</strong></h2>
+        <h2 id="weatherDescription">Description</h2>
+        <ul>
+            <div class="features">
+            <li id="feelsLike">Feels Like 0°C</li>
+            <li id="humidity">Humidity 0</li>
+            <li id="longitude">Longitude 0</li>
+            <li id="latitude">Latitude 0</li>
+            </div>
+        </ul>
+        </div>
+        <a id="mylink" href="https://www.instagram.com/vishesh.gif/" target="_blank" class="my-link">Created by Vishesh</a>
+        <a id="spotifyLink" href="#" target="_blank" class="spotify-button">🎵</a>
+        <a id="accuweather" href="#" target='_blank' class="accuweather-button">Search AccuWeather</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
